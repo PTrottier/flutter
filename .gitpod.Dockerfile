@@ -4,10 +4,7 @@ ENV FLUTTER_HOME=/home/gitpod/flutter
 
 # Install Flutter SDK
 RUN git clone -b stable https://github.com/flutter/flutter.git $FLUTTER_HOME \
-    && $FLUTTER_HOME/bin/flutter config --no-analytics \
-    && ./flutter/bin/flutter --version \
-    && $FLUTTER_HOME/bin/flutter channel master \
-    && $FLUTTER_HOME/bin/flutter upgrade
+    && $FLUTTER_HOME/bin/flutter config --no-analytics
 
 # Change the PUB_CACHE to /workspace so dependencies are preserved.
 ENV PUB_CACHE=/workspace/.pub_cache
